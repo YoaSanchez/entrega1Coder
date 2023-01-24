@@ -1,4 +1,5 @@
 class TicketManager {
+
     constructor() {
         this.events = []
     }
@@ -8,7 +9,7 @@ class TicketManager {
         if (count === 0) {
             return 1
         } else {
-            return (this.events[count-1].id) + 1
+            return (this.events[count - 1].id) + 1
         }
     }
 
@@ -39,13 +40,24 @@ class TicketManager {
             capacity
         })
     }
+
+    getProductById = (id) => {
+        for (let i = 0; i < this.events.length + 1; i++) {
+            if (this.events[i].id == id) {
+                console.log(this.events[id])
+            }
+        }
+    }
+
 }
+
 
 const ticketManager = new TicketManager()
 ticketManager.addEvent('Shakira', 'Concierto del pespecho', 150, 'http://www.coderimages.com/shakira.jpg', '101010', 500)
-// console.log(ticketManager.getEvents())
+console.log(ticketManager.getEvents())
 ticketManager.addEvent('Bad Bunny', 'Concierto poético', 400, 'http://www.coderimages.com/badbunny.jpg', '101011', 500)
 ticketManager.addEvent('El Titi', 'titi me preguntó', 400, 'http://www.coderimages.com/badbunny.jpg', '101010', 500)
 console.log(ticketManager.getEvents())
 ticketManager.addEvent('El Titi 2', 'titi me preguntó', 400, 'http://www.coderimages.com/badbunny.jpg', 500)
 console.log(ticketManager.getEvents())
+console.log(ticketManager.getProductById(1))
